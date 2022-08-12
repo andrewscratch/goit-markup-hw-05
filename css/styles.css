@@ -8,6 +8,8 @@
   --icon-color: #afb1b8;
   --color-decor: #afb1b8;
   --header-border: 1px;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing: 250ms;
 }
 
 body {
@@ -549,7 +551,7 @@ ul {
   color: #ffffff;
   font-weight: 400;
   line-height: 1.8;
-  background-color: #2196f3e5;
+  background-color: rgba(33, 150, 243, 0.9);
   padding: 40px;
   height: 100%;
   transform: translateY(100%);
@@ -591,4 +593,47 @@ ul {
   padding: 20px 24px 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity var(--timing) var(--cubic);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  overflow: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--timing) var(--cubic),
+    opacity var(--timing) var(--cubic);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--normal-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
