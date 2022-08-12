@@ -7,9 +7,11 @@
   --secondary-color: #f5f4fa;
   --icon-color: #afb1b8;
   --color-decor: #afb1b8;
+  --header-border: 1px;
 }
 
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   color: var(--primary-color);
 }
@@ -95,6 +97,12 @@ ul {
 
 .headsite {
   border-bottom: 1px solid #ececec;
+  position: fixed;
+  background-color: var(--normal-color);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .site-nav .logo {
@@ -102,11 +110,20 @@ ul {
   margin-right: 93px;
 }
 
+.site-nav .current {
+  color: var(--accent-color);
+  position: relative;
+}
+
 .site-nav,
 .otherpages-list,
 .main-nav,
 .contacts-list {
   display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 }
 
 .main-nav {
@@ -128,15 +145,22 @@ ul {
   padding: 32px 0px;
 }
 
+.site-nav .current::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  position: absolute;
+  bottom: calc(0px - var(--header-border));
+  right: 0;
+}
+
 .contacts-link {
   font-style: normal;
   color: var(--minor-color);
   display: flex;
   fill: currentColor;
-}
-
-.current {
-  color: var(--accent-color);
 }
 
 .contacts-icon-tel {
@@ -261,9 +285,23 @@ ul {
   display: flex;
   column-gap: 30px;
 }
-
+.item-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  position: absolute;
+  color: #ececec;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  right: 0;
+}
 .what-we-can-do-item {
   flex-basis: calc((100%-60px) / 3);
+  position: relative;
+  display: flex;
 }
 
 .img {
@@ -496,7 +534,26 @@ ul {
 
 .examples-item {
   max-width: calc((100%-60px) / 3);
-  background-color: var(--normal-color);
+}
+
+.examples-layout {
+  position: relative;
+  overflow: hidden;
+}
+
+.examples-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.8;
+  background-color: #2196f3e5;
+  padding: 40px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
 }
 
 .examples .link:hover,
@@ -505,10 +562,15 @@ ul {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.examples-item:hover,
-.examples-item:focus {
+.examples-item:hover .examples-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.examples-item:hover .examples-text {
+  transform: translateY(0);
+  transition: transform 250ms linear;
 }
 
 .examples-subtitle {
