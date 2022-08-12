@@ -213,6 +213,9 @@ ul {
   border-radius: 4px;
   padding: 10px 32px 10px 32px;
   min-width: 216px;
+  transition-property: background-color, color;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .hero-button:hover,
@@ -373,6 +376,9 @@ ul {
   align-items: center;
   justify-content: center;
   fill: var(--color-decor);
+  transition-property: fill, background-color;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .team-soc-link:hover,
@@ -416,6 +422,9 @@ ul {
   height: 100%;
   border: 1px solid var(--color-decor);
   border-radius: 4px;
+  transition-property: fill, background-color;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .clients-link:hover,
@@ -485,6 +494,9 @@ ul {
   border-radius: 50px;
   fill: var(--normal-color);
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: fill, background-color;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .join-list .soc-link:hover,
@@ -516,6 +528,9 @@ ul {
   background-color: var(--secondary-color);
   border-radius: 4px;
   padding: 6px 22px 6px 22px;
+  transition-property: fill, background-color;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .filters-button:hover,
@@ -550,21 +565,16 @@ ul {
   font-size: 18px;
   color: #ffffff;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.56;
   background-color: rgba(33, 150, 243, 0.9);
   padding: 40px;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 250ms linear;
+  transition: transform var(--timing) var(--cubic);
 }
 
-.examples .link:hover,
-.examples .link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.examples-item:hover .examples-item:focus {
+.examples-item:hover,
+.examples-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
@@ -573,6 +583,7 @@ ul {
 .examples-item:hover .examples-text {
   transform: translateY(0);
   transition: transform 250ms linear;
+  cursor: pointer;
 }
 
 .examples-subtitle {
@@ -601,7 +612,7 @@ ul {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity var(--timing) var(--cubic);
+  transition: opacity var(--timing) var(--cubic), visibility 500ms;
 }
 
 .modal {
@@ -619,7 +630,12 @@ ul {
   opacity: 1;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
 .modal-close {
+  display: flex;
   position: absolute;
   align-items: center;
   justify-content: center;
