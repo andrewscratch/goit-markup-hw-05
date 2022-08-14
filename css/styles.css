@@ -144,6 +144,9 @@ ul {
   color: inherit;
   display: block;
   padding: 32px 0px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .site-nav .current::after {
@@ -162,6 +165,9 @@ ul {
   color: var(--minor-color);
   display: flex;
   fill: currentColor;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--cubic);
 }
 
 .contacts-icon-tel {
@@ -293,6 +299,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  line-height: 1.14;
   text-transform: uppercase;
   position: absolute;
   color: #ececec;
@@ -513,6 +521,7 @@ ul {
 .filters-list {
   display: flex;
   justify-content: center;
+  padding-top: 94px;
 }
 
 .filters-item:not(:last-child) {
