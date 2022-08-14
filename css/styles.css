@@ -520,11 +520,6 @@ ul {
 
 /* -------------portfolio-------------- */
 
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
 .filters-list {
   display: flex;
   justify-content: center;
