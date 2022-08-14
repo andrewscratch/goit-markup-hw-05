@@ -149,6 +149,12 @@ ul {
   transition-timing-function: var(--cubic);
 }
 
+.otherpages-link {
+  position: relative;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .site-nav .current::after {
   content: "";
   width: 100%;
@@ -513,7 +519,7 @@ ul {
 
 /* -------------portfolio-------------- */
 
-.examples {
+.section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
