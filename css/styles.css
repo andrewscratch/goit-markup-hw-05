@@ -527,7 +527,7 @@ ul {
 .filters-list {
   display: flex;
   justify-content: center;
-  padding-top: 94px;
+  padding-top: 80px;
 }
 
 .filters-item:not(:last-child) {
