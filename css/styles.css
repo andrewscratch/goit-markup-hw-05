@@ -16,6 +16,7 @@ body {
   position: relative;
   font-family: "Roboto", sans-serif;
   color: var(--primary-color);
+  padding-top: 80px;
 }
 
 h1,
@@ -99,12 +100,16 @@ ul {
 
 .headsite {
   border-bottom: 1px solid #ececec;
-
+  position: fixed;
   background-color: var(--normal-color);
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 
+.main {
+  padding-top: 80px;
+}
 .site-nav .logo {
   padding-top: 24px;
   margin-right: 93px;
@@ -306,6 +311,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
